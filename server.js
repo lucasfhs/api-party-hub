@@ -1,0 +1,21 @@
+require("dotenv").config();
+const PORT = process.env.PORT || 3000;
+const express = require("express");
+const db = require("./config/mongoose");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const setupSwagger = require("./helpers/swagger");
+const app = express();
+const authRoutes = require("./routes/auth/authRoutes");
+const userRoutes = require("./routes/user/userRoutes");
+const partyRoutes = require("./routes/partyRoutes");
+app.use(express.json());
+app.use(cors());
+app.use(express.static("public"));
+app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/user", userRoutes);
+app.use("/api/v1/party", partyRoutes);
+setupSwagger(app);
+app.listen(PORT, () => {
+  console.log("Server Online : http://localhost:" + PORT);
+});
