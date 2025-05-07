@@ -1,102 +1,78 @@
-﻿
-API CREATED FOR MONGODB UDEMY COURSE - > https://www.udemy.com/course/mongodb-do-basico-ao-avancado-c-mongoose-e-projetos/
+# PartyManager API  
 
+**API created for the MongoDB Udemy Course** → [MongoDB from Basic to Advanced (with Mongoose & Projects)](https://www.udemy.com/course/mongodb-do-basico-ao-avancado-c-mongoose-e-projetos/)  
 
-# PartyManager API
+![PartyManager Banner](./public/img/background-image.jpg)  
 
-PartyManager is an API designed for event management, allowing users to create, manage, and track parties and events with ease.
+PartyManager is a **RESTful API** designed for **event and party management**, providing features for creating, organizing, and tracking events efficiently.  
 
-![PartyManager](./public/img/background-image.jpg)
+## ✨ Features  
 
-## Features
+- ✅ **Event Management**: Create, update, and delete parties/events.  
+- 🔐 **Secure Authentication**: JWT-based user authentication and authorization.  
+- 🗃 **MongoDB Integration**: Persistent data storage using MongoDB and Mongoose.  
+- 📚 **API Documentation**: Interactive Swagger UI for easy API exploration.  
 
-- Create and manage events
-- User authentication and authorization via JWT
-- Integration with MongoDB for data storage
-- API documentation accessible through Swagger
+## 🛠 Technologies Used  
 
-## Technologies Used
+| Technology       | Purpose                          |  
+|------------------|----------------------------------|  
+| **Express.js**   | Backend framework                |  
+| **MongoDB**      | Database storage                 |  
+| **Mongoose**     | MongoDB object modeling          |  
+| **JWT**          | Secure user authentication       |  
+| **Bcrypt**       | Password hashing                 |  
+| **CORS**         | Cross-Origin Resource Sharing    |  
+| **Swagger**      | API documentation                |  
+| **Dotenv**       | Environment variable management  |  
 
-The following technologies and packages are used in this project:
+## ⚙️ Prerequisites  
 
-- **bcrypt**: For hashing passwords
-- **body-parser**: Middleware to parse incoming request bodies
-- **cors**: Middleware to enable Cross-Origin Request Sharing
-- **dotenv**: For managing environment variables
-- **express**: Web framework for building the API
-- **jsonwebtoken**: For JWT authentication
-- **mongoose**: MongoDB object modeling
-- **swagger-jsdoc**: For generating API documentation from JSDoc comments
-- **swagger-ui-express**: For serving the Swagger API documentation
-
-## Prerequisites
-
-Before running the application, you need to create a `.env` file in the root directory of your project with the following environment variables:
+Before running the app, create a `.env` file in the root directory with the following variables:  
 
 ```env
-PORT=<your-desired-port>
-MONGO_DB_URL=<your-mongodb-connection-string>
-JWT_SECRET_KEY=<your-secret-key-for-jwt>
+PORT=5000  # Your API port
+MONGO_DB_URL=mongodb://localhost:27017/party_manager  # MongoDB connection URL
+JWT_SECRET_KEY=your_secure_jwt_secret  # Secret key for JWT
 ```
 
-### Example:
+## 🚀 Installation & Setup  
 
-```env
-PORT=5000
-MONGO_DB_URL=mongodb://localhost:27017/party_manager
-JWT_SECRET_KEY=mysecretkey
-```
+1. **Clone the repository**:  
+   ```bash
+   git clone <repository-url>
+   cd party-manager-api
+   ```
 
-## Installation
+2. **Install dependencies**:  
+   ```bash
+   npm install
+   ```
 
-Follow these steps to get your environment set up:
+3. **Run the API in development mode**:  
+   ```bash
+   npm run dev
+   ```
 
-1. Clone this repository:
+4. **Access the API**:  
+   - Default URL: `http://localhost:5000`  
+   - Swagger Docs: `http://localhost:5000/api-docs`  
 
-```bash
-git clone <repository-url>
-```
+## 📖 API Documentation  
 
-2. Install the dependencies:
+The API is fully documented using **Swagger UI**. Explore endpoints, request/response schemas, and test API calls directly at:  
 
-```bash
-npm install
-```
+🔗 **[http://localhost:5000/api-docs](http://localhost:5000/api-docs)**  
 
-## Running the Application
+## 📂 Available Endpoints  
 
-To run the API in development mode, use the following command:
+- **Auth**: User registration, login, and token management.  
+- **Events**: Create, read, update, and delete parties/events.  
+- **Users**: Manage user profiles and permissions.  
 
-```bash
-npm run dev
-```
+---
 
-The API will start, and you can access it on the specified port (default is `PORT=5000`).
+### 🖼️ Image Credit  
+Banner by [redgreystock on Freepik](https://www.freepik.com/free-vector/pixel-art-happy-birthday-elements-with-y2k-cakes-candles-gift-boxes-ribbon-bows_369889297.htm).  
 
-## API Documentation
-
-The API documentation is generated using Swagger and can be accessed at:
-
-```
-<your-api-url>/api-docs
-```
-
-For example, if you're running the app locally:
-
-```
-http://localhost:5000/api-docs
-```
-
-## Endpoints
-
-The following endpoints are available (check the Swagger docs for more details):
-
-## Contributing
-
-If you'd like to contribute, feel free to submit a pull request. We welcome improvements, bug fixes, and new features!
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-Image by [redgreystock on Freepik](https://www.freepik.com/free-vector/pixel-art-happy-birthday-elements-with-y2k-cakes-candles-gift-boxes-ribbon-bows_369889297.htm)
+---
